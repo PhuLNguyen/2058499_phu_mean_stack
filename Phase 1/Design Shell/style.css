@@ -1,0 +1,61 @@
+/* 2058499 Design Shell */
+
+p {
+    text-indent: 5px;
+    background-color: yellow;
+}
+
+div {
+    padding: 10px;
+}
+
+body {
+    background-color:rgb(172, 224, 248) ;
+}
+
+.headerStyle {
+    border-style: dotted;
+    border-color: blue;
+}
+
+.mainStyle {
+    border-style: solid;
+    border-color: red;
+}
+
+.footerStyle {
+    border-style: dashed;
+    border-color: green;
+}
+
+h1 {
+    text-align: center;
+    color: magenta;
+
+}
+
+h1:after {
+    content: '\2728';
+}
+
+h1:before {
+    content: '\2728';
+}
+
+h2 {
+    text-indent: 5px;
+    color:olivedrab
+}
+
+h2:after {
+    content: ' \2708\2708\2708\2708\2708\2708\2708\2708\2708\2708\2708';
+}
+
+h3 {
+    text-indent: 5px;
+    color:rgba(255, 0, 0, 0.158)
+}
+
+h3:after {
+    content: ' \2702\2702\2702\2702\2702\2702\2702\2702\2702\2702\2702';
+}
