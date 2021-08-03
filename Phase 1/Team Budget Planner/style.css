@@ -1,0 +1,14 @@
+/* 2058499 Team Budget Planner */
+body {
+    margin: 0 auto;
+    text-align: center;
+    border: 5px solid black;
+}
+
+ul {
+    list-style: none;
+}
+
+#li_finance_teams {
+    margin-top: 20px;
+}
