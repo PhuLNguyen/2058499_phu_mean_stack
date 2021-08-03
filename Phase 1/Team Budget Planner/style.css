@@ -1,8 +1,10 @@
 /* 2058499 Team Budget Planner */
 body {
     margin: 0 auto;
-    text-align: center;
+    text-align: left;
     border: 5px solid black;
+    padding-left: 20px;
+    padding-bottom: 20px;
 }
 
 ul {
@@ -11,4 +13,8 @@ ul {
 
 #li_finance_teams {
     margin-top: 20px;
+}
+
+div {
+    margin-bottom: 10px;
 }
