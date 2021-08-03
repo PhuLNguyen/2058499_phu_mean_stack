@@ -20,21 +20,35 @@
             <input type="reset" value="Clear">
         </div>
         <div>
-            <a href="index.html">back</a>
+            <a href="index.html">Back</a>
         </div>
     </form>
     <script>
-        let projects = [];
-
-        function addProject(){
-            let newProject = {
-                "client" : document.getElementById("client").value,
-                "project": document.getElementById("project").value,
-                "budget": document.getElementById("budget").value
+        function addProject() {
+            // load data from the storage
+            let savedProjects = sessionStorage.getItem("projects");
+            let projects = [];
+            // check if the data existed
+            if (savedProjects != null) {
+                // convert string into JSON
+                let projectsJSON = JSON.parse(savedProjects);
+                // restore the array of saved projects
+                projectsJSON.forEach(project => {
+                    projects.push(project);
+                })
             }
 
+            // get the fields from user input
+            let newProject = [
+                document.getElementById("client").value,
+                document.getElementById("project").value,
+                document.getElementById("budget").value
+            ];
+
+            // add to the object
             projects.push(newProject);
-            document.write(JSON.stringify(projects))
+
+            // convert JSON to string and store the storage
             sessionStorage.setItem("projects", JSON.stringify(projects));
         }
     </script>

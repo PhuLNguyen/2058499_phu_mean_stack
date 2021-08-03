@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,7 +8,60 @@
     <title>2058499 Finance Teams</title>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-    
+    <h1>Annual Budget</h1>
+    <table id="projectsTable">
+        <tr>
+            <th>Client Name</th>
+            <th>Project Name</th>
+            <th>Budget ($)</th>
+        </tr>
+    </table>
+    <div>
+        <a href="index.html">Back</a>
+    </div>
+    <script>
+        let savedProjects = sessionStorage.getItem("projects");
+        let projects = JSON.parse(savedProjects);
+        let projectsTable = document.getElementById("projectsTable");
+        let budget_index = 2;
+        let totalBudget = 0.0;
+
+        let tr_total = document.createElement("tr");
+        let td_total = document.createElement("td");
+        let totalTextNode = document.createTextNode("Total:");
+        let td_totalBudget = document.createElement("td");
+        let totalBudgetTextNode;
+
+        projects.forEach(project => {
+            let tr = document.createElement("tr");
+
+            for (let i = 0; i < project.length; i++) {
+                let td = document.createElement("td");
+                let text = document.createTextNode(project[i]);
+
+                td.appendChild(text);
+                tr.appendChild(td);
+
+                if (i == budget_index)
+                {
+                    totalBudget += parseFloat(project[i]);
+                }
+            }
+
+            projectsTable.appendChild(tr);
+        })
+
+        totalBudgetTextNode = document.createTextNode(totalBudget.toString());
+        td_totalBudget.appendChild(totalBudgetTextNode);
+        td_total.appendChild(totalTextNode);
+        tr_total.appendChild(td_total);
+        tr_total.appendChild(td_totalBudget);
+        td_total.setAttribute("colspan", "2");
+        projectsTable.appendChild(tr_total);
+
+    </script>
 </body>
+
 </html>
