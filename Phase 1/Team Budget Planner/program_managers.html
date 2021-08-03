@@ -10,19 +10,34 @@
 </head>
 
 <body>
-    <form action="index.html">
+    <form>
         <h1>Add New Budget</h1>
-        <div>Client Name: <input type="text"></div>
-        <div>Project Name: <input type="text"></div>
-        <div>Budget: <input type="text"></div>
+        <div>Client Name: <input type="text" id="client"></div>
+        <div>Project Name: <input type="text" id="project"></div>
+        <div>Budget: <input type="text" id="budget"></div>
         <div>
-            <input type="submit" value="Add">
+            <input type="button" value="Add" onclick="addProject()">
             <input type="reset" value="Clear">
         </div>
         <div>
             <a href="index.html">back</a>
         </div>
     </form>
+    <script>
+        let projects = [];
+
+        function addProject(){
+            let newProject = {
+                "client" : document.getElementById("client").value,
+                "project": document.getElementById("project").value,
+                "budget": document.getElementById("budget").value
+            }
+
+            projects.push(newProject);
+            document.write(JSON.stringify(projects))
+            sessionStorage.setItem("projects", JSON.stringify(projects));
+        }
+    </script>
 </body>
 
 </html>
