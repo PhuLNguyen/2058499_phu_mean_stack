@@ -15,10 +15,10 @@
 </head>
 
 <body>
-    <div class="container-fuild">
-        <header class="fixed-top">
-            <div>
-                <h1 class="text-center">Simply Blogging</h1>
+    <div class="container middle_col">
+        <header>
+            <div id="title-div">
+                <img src="./assets/blog_name1.png">
             </div>
             <div>
                 <ul class="nav">
@@ -38,49 +38,43 @@
         <section>
             <form class="form-group">
                 <div class="row">
-                    <div class="col-1">
+                    <div class="col-2">
                         <label>Title</label>
                     </div>
-                    <div class="col-1">
+                    <div class="col-2">
                         <input type="text" id="title">
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-1">
+                    <div class="col-2">
                         <label>Article</label>
                     </div>
-                    <div class="col-1">
+                    <div class="col-2">
                         <input type="text" id="article">
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-1">
+                    <div class="col-2">
                         <label>Add Image</label>
                     </div>
-                    <div class="col-1">
+                    <div class="col-2">
                         <input type="text" id="img_url">
                     </div>
                 </div>
-                <div>
-                    <input class="btn btn-secondary" type="reset" value="Add Blog" onclick="addBlog()">
+                <div id="buttons_div">
+                    <input class="btn btn-primary " type="button" value="Add Blog" onclick="addBlog()">
+                    <input class="btn btn-secondary" type="reset" value="Clear Text">
                 </div>
             </form>
         </section>
-        <div id="blogs_area">
-            <!-- Articles, in the most recent order -->
-            <div>
-                <h3>Title</h3>
-                <p>
-                    hwewkehkwhekwhekwhekwhehkwhekwhehekhw
-                </p>
-                <img src="https://via.placeholder.com/350x150">
-            </div>
 
-            <img src="https://via.placeholder.com/350x150">
-            <img src="https://via.placeholder.com/350x150">
-            <img src="https://via.placeholder.com/350x150">
-            <img src="https://via.placeholder.com/350x150">
-        </div>
+        <div class="row" id="blogs_area"></div>
+
+        <footer>
+            <div>
+                &copy; 2021 Simply Blogging. All rights Reserved
+            </div>
+        </footer>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
