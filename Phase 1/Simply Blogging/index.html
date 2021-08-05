@@ -5,52 +5,93 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="style.css">
+
     <title>2058499 Simply Blogging</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 </head>
 
 <body>
-    <header>
-        <div>
-            <h1>Simply Blogging</h1>
-        </div>
-        <div>
-            <nav>
-                <ul>
-                    <li><a href="#">Add Blog</a></li>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">About Us</a></li>
-                    <li><a href="#">Contact</a></li>
+    <div class="container-fuild">
+        <header class="fixed-top">
+            <div>
+                <h1 class="text-center">Simply Blogging</h1>
+            </div>
+            <div>
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Contact</a>
+                    </li>
                 </ul>
-            </nav>
-        </div>
-    </header>
+            </div>
+        </header>
 
-    <body>
-        <div>
-            <form>
-                <div>
-                    <label>Title</label>
-                    <input type="text">
+        <section>
+            <form class="form-group">
+                <div class="row">
+                    <div class="col-1">
+                        <label>Title</label>
+                    </div>
+                    <div class="col-1">
+                        <input type="text" id="title">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1">
+                        <label>Article</label>
+                    </div>
+                    <div class="col-1">
+                        <input type="text" id="article">
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-1">
+                        <label>Add Image</label>
+                    </div>
+                    <div class="col-1">
+                        <input type="text" id="img_url">
+                    </div>
                 </div>
                 <div>
-                    <label>Article</label>
-                    <input type="text">
-                </div>
-                <div>
-                    <label>Add Image</label>
-                    <input type="text">
-                </div>
-                <div>
-                    <input type="submit" value="Add Blog">
+                    <input class="btn btn-secondary" type="reset" value="Add Blog" onclick="addBlog()">
                 </div>
             </form>
-        </div>
-
-        <div>
+        </section>
+        <div id="blogs_area">
             <!-- Articles, in the most recent order -->
+            <div>
+                <h3>Title</h3>
+                <p>
+                    hwewkehkwhekwhekwhekwhehkwhekwhehekhw
+                </p>
+                <img src="https://via.placeholder.com/350x150">
+            </div>
+
+            <img src="https://via.placeholder.com/350x150">
+            <img src="https://via.placeholder.com/350x150">
+            <img src="https://via.placeholder.com/350x150">
+            <img src="https://via.placeholder.com/350x150">
         </div>
-    </body>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
 
     <script src="script.js"></script>
 </body>
