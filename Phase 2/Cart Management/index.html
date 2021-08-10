@@ -1,12 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
     <title>2058499 Cart Management</title>
 </head>
+
 <body>
+    <header>
+        <h1>Tech Store</h1>
+    </header>
+
+    <section>
+        <div class="container-fuild">
+            <div class="row">
+                <div  class="col">
+                    <label>Cart Size: </label>
+                    <label id="cartSize">0</label>
+                </div>
+                <div  class="col">
+                    <input type="button" value="Checkout" class="btn btn-success" onclick="checkOut()">
+                </div>
+            </div>
+
+            <div class="row">
+                <div  class="col">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Name: CPU</h5>
+                            <h6 class="card-subtitle mb-2">Price: $5000</h6>
+                            <input type="button" value="Add" class="btn btn-primary" onclick="Add()">
+                        </div>
+                    </div>
+                </div>
+                <div  class="col">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Name: GPU</h5>
+                            <h6 class="card-subtitle mb-2">Price: $2000</h6>
+                            <input type="button" value="Add" class="btn btn-primary" onclick="Add()">
+                        </div>
+                    </div>
+                </div>
+            </div>
     
+            <div class="row">
+                <div  class="col">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Name: RAM</h5>
+                            <h6 class="card-subtitle mb-2">Price: $1000</h6>
+                            <input type="button" value="Add" class="btn btn-primary" onclick="Add()">
+                        </div>
+                    </div>
+                </div>
+                <div  class="col">
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                            <h5 class="card-title">Name: Motherboard</h5>
+                            <h6 class="card-subtitle mb-2">Price: $3000</h6>
+                            <input type="button" value="Add" class="btn btn-primary" onclick="Add()">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; Copyright 2021. All right reserved
+    </footer>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
