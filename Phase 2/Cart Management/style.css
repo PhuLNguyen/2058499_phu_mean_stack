@@ -1,1 +1,53 @@
 /* 2058499 Cart Management */
+.card {
+    display: inline-block;
+    margin: 10px;
+}
+
+header {
+    background-color: rgba(8, 88, 153, 0.637);
+    /* fix a small white line between header and section tag */
+    border: 1px solid rgba(255, 255, 255, 0);
+}
+
+section {
+    background-color: rgba(185, 223, 253, 0.637);
+    padding: 10px;
+}
+
+footer {
+    background-color: rgba(8, 88, 153, 0.637);
+    padding: 10px 10px 10px 15px;
+}
+
+img {
+    width: 150px;
+    padding-left: 5px;
+}
+
+#cartSizeRow {
+    padding-left: 10px;
+}
+
+.card {
+    border-radius: 10px;
+    background-color: rgba(209, 209, 209, 0.473);
+}
+
+.card:hover {
+    box-shadow: green;
+    background-color: rgba(68, 118, 255, 0.473);
+}
+
+label {
+    font-size: larger;
+    font-weight: bold ;
+}
+
+#cartSize {
+    color: rgb(255, 0, 0);
+}
+
+#total {
+    color: green;
+}

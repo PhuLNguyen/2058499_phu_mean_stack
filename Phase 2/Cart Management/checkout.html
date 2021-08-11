@@ -18,29 +18,26 @@
         <h1><img src="TechStoreTrans.png"></h1>
     </header>
 
-    <section>
-        <div class="container-fuild">
-            <div class="row" id="cartSizeRow">
-                <div class="col-4">
-                    <label>Cart Size:</label>
-                    <label id="cartSize">0</label>
-                </div>
-                <div class="col">
-                    <a class="btn btn-success" href="checkout.html" role="button">Checkout</a>
-                </div>
-            </div>
-        </div>
-    </section>
+    <section id="tableArea"></section>
 
     <section>
-        <div id="itemsArea"></div>
+        <table class="table table-bordered table-striped table-hover" id="itemsTable">
+            <tr class="bg-primary">
+                <th>Item Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+            </tr>
+        </table>
+
+        <label>Total: </label>
+        <label id="total"></label>
     </section>
 
     <footer>
         &copy; Copyright 2021. All right reserved
     </footer>
 
-    <script src="script.js"></script>
+    <script src="checkout.js"></script>
 </body>
 
 </html>
