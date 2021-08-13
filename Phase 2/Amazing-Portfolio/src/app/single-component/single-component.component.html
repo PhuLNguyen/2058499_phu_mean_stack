@@ -1,0 +1,59 @@
+<div>
+    <h1>Login Form</h1>
+    <form>
+        <label for="usernameInput">Username</label>
+        <input type="text" name="usernameInput">
+        <br>
+        <label for="passwordInput">Password</label>
+        <input type="password" name="passwordInput">
+        <br>
+        <input type="button" value="Login">
+        <input type="button" value="Sign Up">
+    </form>
+</div>
+
+<div>
+    <h1>Registration Form</h1>
+    <input type="button" value="Login">
+    <form>
+        <label for="firstnameInput">First name</label>
+        <input type="text" name="firstnameInput">
+        <br>
+        <label for="lastnameInput">Last name</label>
+        <input type="text" name="lastnameInput">
+        <br>
+        <label for="usernameInput">Username</label>
+        <input type="text" name="usernameInput">
+        <br>
+        <label for="passwordInput">Password</label>
+        <input type="password" name="passwordInput">
+        <br>
+        <input type="button" value="Register">
+        <input type="button" value="Reset">
+    </form>
+</div>
+
+<div>
+    <h1>My Portfolio</h1>
+    Welcome {{username}}
+    <br>
+    <label for="contactNameInput">Contact Name</label>
+    <input type="text" name="contactNameInput">
+    <br>
+    <label for="phoneNumber">Phone Number</label>
+    <input type="text" name="phoneNumber">
+    <br>
+    <input type="button" value="Save">
+    <br>
+    <input type="button" value="Contact Details">
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Phone Number</th>
+        </tr>
+        <tr *ngFor="let contact of contacts">
+            <td>{{contact.name}}</td>
+            <td>{{contact.number}}</td>
+        </tr>
+    </table>
+</div>
