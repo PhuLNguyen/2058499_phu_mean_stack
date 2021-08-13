@@ -1,59 +1,68 @@
-<div>
-    <h1>Login Form</h1>
-    <form>
-        <label for="usernameInput">Username</label>
-        <input type="text" name="usernameInput">
-        <br>
-        <label for="passwordInput">Password</label>
-        <input type="password" name="passwordInput">
-        <br>
+<div class="container">
+    <div *ngIf="!loginSuccess" class="form-group">
+        <h1>Login Form</h1>
+        <form [formGroup]="loginForm" (ngSubmit)="login()">
+            <label for="username">Username</label>
+            <input type="text" formControlName="username" class="form-control">
+            <br>
+            <label for="password">Password</label>
+            <input type="password" name="password" formControlName="password" class="form-control">
+            <br>
+            <!-- Have to use '?' before '.invalid' property because of error "Object is possibly 'null'"-->
+            <div class="alert alert-danger"  *ngIf="error"> 
+                <p>{{errorMsg}}</p>
+            </div>
+            <input type="submit" value="Login">
+            <input type="button" value="Sign Up">
+        </form>
+    </div>
+    
+    <div *ngIf="newUser">
+        <h1>Registration Form</h1>
         <input type="button" value="Login">
-        <input type="button" value="Sign Up">
-    </form>
-</div>
-
-<div>
-    <h1>Registration Form</h1>
-    <input type="button" value="Login">
-    <form>
-        <label for="firstnameInput">First name</label>
-        <input type="text" name="firstnameInput">
+        <form>
+            <label for="firstname">First name</label>
+            <input type="text" name="firstname" formControlName="firstname" class="form-control">
+            <br>
+            <label for="lastname">Last name</label>
+            <input type="text" name="lastname" formControlName="lastname" class="form-control">
+            <br>
+            <label for="username">Username</label>
+            <input type="text" name="username" formControlName="username" class="form-control">
+            <br>
+            <label for="password">Password</label>
+            <input type="password" name="password" formControlName="password" class="form-control">
+            <br>
+            <input type="button" value="Register">
+            <input type="button" value="Reset">
+    
+            <!-- optional: implement a "logout" button,
+            without the logout button, it's like we are 
+            playing S.A.O. -->
+        </form>
+    </div>
+    
+    <div *ngIf="loginSuccess">
+        <h1>My Portfolio</h1>
+        <h3>Welcome {{username}}</h3>
+        <label for="contactName">Contact Name</label>
+        <input type="text" name="contactName" formControlName="contactName" class="form-control">
         <br>
-        <label for="lastnameInput">Last name</label>
-        <input type="text" name="lastnameInput">
+        <label for="phoneNumber">Phone Number</label>
+        <input type="text" name="phoneNumber" formControlName="phoneNumber" class="form-control">
         <br>
-        <label for="usernameInput">Username</label>
-        <input type="text" name="usernameInput">
+        <input type="button" value="Save">
         <br>
-        <label for="passwordInput">Password</label>
-        <input type="password" name="passwordInput">
-        <br>
-        <input type="button" value="Register">
-        <input type="button" value="Reset">
-    </form>
-</div>
-
-<div>
-    <h1>My Portfolio</h1>
-    Welcome {{username}}
-    <br>
-    <label for="contactNameInput">Contact Name</label>
-    <input type="text" name="contactNameInput">
-    <br>
-    <label for="phoneNumber">Phone Number</label>
-    <input type="text" name="phoneNumber">
-    <br>
-    <input type="button" value="Save">
-    <br>
-    <input type="button" value="Contact Details">
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Phone Number</th>
-        </tr>
-        <tr *ngFor="let contact of contacts">
-            <td>{{contact.name}}</td>
-            <td>{{contact.number}}</td>
-        </tr>
-    </table>
+        <input type="button" value="Contact Details">
+        <table>
+            <tr>
+                <th>Name</th>
+                <th>Phone Number</th>
+            </tr>
+            <tr *ngFor="let contact of userContacts">
+                <td>{{contact.getName()}}</td>
+                <td>{{contact.getNumber()}}</td>
+            </tr>
+        </table>
+    </div>
 </div>
