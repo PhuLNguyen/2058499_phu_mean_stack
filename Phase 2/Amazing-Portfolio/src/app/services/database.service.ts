@@ -15,8 +15,13 @@ export class DatabaseService {
     );
   }
 
-  searchUser(username: string, password:string): User | undefined {
+  authUser(username: string, password:string): User | undefined {
     return this.users.find(user => 
       username === user.getUsername() && password === user.getPassword());
+  }
+
+  searchUser(username: string): User | undefined {
+    return this.users.find(user => 
+      username === user.getUsername());
   }
 }

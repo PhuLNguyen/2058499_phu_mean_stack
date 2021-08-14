@@ -6,7 +6,7 @@ export class User {
     constructor(private username: string, private password: string){}
   
     addContact(name: string, number: string) {
-      this.contacts.push(
+      this.contacts.unshift(
         new Contact(name, number)
       );
     }

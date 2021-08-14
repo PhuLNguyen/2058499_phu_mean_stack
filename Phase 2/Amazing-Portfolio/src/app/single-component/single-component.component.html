@@ -1,68 +1,79 @@
 <div class="container">
-    <div *ngIf="!loginSuccess" class="form-group">
+    <div *ngIf="loginPage">
         <h1>Login Form</h1>
-        <form [formGroup]="loginForm" (ngSubmit)="login()">
-            <label for="username">Username</label>
-            <input type="text" formControlName="username" class="form-control">
-            <br>
-            <label for="password">Password</label>
-            <input type="password" name="password" formControlName="password" class="form-control">
-            <br>
-            <!-- Have to use '?' before '.invalid' property because of error "Object is possibly 'null'"-->
-            <div class="alert alert-danger"  *ngIf="error"> 
-                <p>{{errorMsg}}</p>
-            </div>
-            <input type="submit" value="Login">
-            <input type="button" value="Sign Up">
-        </form>
+        <div class="form-group">
+            <form [formGroup]="loginForm" (ngSubmit)="login()">
+                <label for="username">Username</label>
+                <input type="text" id="username" formControlName="username" class="form-control">
+                <br>
+                <label for="password">Password</label>
+                <input type="password" id="password" formControlName="password" class="form-control">
+                <br>
+                <div class="alert alert-danger" role="alert" *ngIf="usernamePasswordError"> 
+                    username and/or password is incorrect
+                </div>
+                <input type="submit" value="Login" [disabled]="!loginForm.valid">
+                <input type="button" value="Sign Up" (click)="signUp()">
+            </form>
+        </div>
     </div>
     
-    <div *ngIf="newUser">
+    <div *ngIf="registrationPage">
         <h1>Registration Form</h1>
-        <input type="button" value="Login">
-        <form>
-            <label for="firstname">First name</label>
-            <input type="text" name="firstname" formControlName="firstname" class="form-control">
-            <br>
-            <label for="lastname">Last name</label>
-            <input type="text" name="lastname" formControlName="lastname" class="form-control">
-            <br>
-            <label for="username">Username</label>
-            <input type="text" name="username" formControlName="username" class="form-control">
-            <br>
-            <label for="password">Password</label>
-            <input type="password" name="password" formControlName="password" class="form-control">
-            <br>
-            <input type="button" value="Register">
-            <input type="button" value="Reset">
-    
-            <!-- optional: implement a "logout" button,
-            without the logout button, it's like we are 
-            playing S.A.O. -->
-        </form>
+        <input type="button" value="To Login Page" (click)="toLoginPage()">
+        <div class="form-group">
+            <form [formGroup]="registrationForm" (ngSubmit)="register()">
+                <label for="firstname">First name</label>
+                <input type="text" id="firstname" formControlName="firstname" class="form-control">
+                <br>
+                <label for="lastname">Last name</label>
+                <input type="text" id="lastname" formControlName="lastname" class="form-control">
+                <br>
+                <label for="username">Username</label>
+                <input type="text" id="username" formControlName="username" class="form-control">
+                <br>
+                <label for="password">Password</label>
+                <input type="password" id="password" formControlName="password" class="form-control">
+                <br>
+                <div class="alert alert-danger" role="alert" *ngIf="usernameExistedError"> 
+                    The username has been taken!
+                </div>
+                <div class="alert alert-success" role="alert" *ngIf="registrationSuccess"> 
+                    Registration Completed! You can login now
+                </div>
+                <input type="submit" value="Register" [disabled]="!registrationForm.valid">
+                <input type="reset" value="Reset">
+            </form>
+        </div>
     </div>
     
-    <div *ngIf="loginSuccess">
+    <div *ngIf="portfolioPage">
         <h1>My Portfolio</h1>
         <h3>Welcome {{username}}</h3>
-        <label for="contactName">Contact Name</label>
-        <input type="text" name="contactName" formControlName="contactName" class="form-control">
-        <br>
-        <label for="phoneNumber">Phone Number</label>
-        <input type="text" name="phoneNumber" formControlName="phoneNumber" class="form-control">
-        <br>
-        <input type="button" value="Save">
-        <br>
-        <input type="button" value="Contact Details">
-        <table>
+        <div class="form-group">
+            <form [formGroup]=contactForm (ngSubmit)="saveContact()">
+                <label for="contactName">Contact Name</label>
+                <input type="text" id="contactName" formControlName="contactName" class="form-control">
+                <br>
+                <label for="phoneNumber">Phone Number</label>
+                <input type="text" id="phoneNumber" formControlName="phoneNumber" class="form-control">
+                <br>
+                <input type="submit" value="Save" [disabled]="!contactForm.valid">
+            </form>
+        </div>
+        <input type="button" value="Contact Details" (click)="showTable()">
+        <table *ngIf="contactsTable">
             <tr>
                 <th>Name</th>
                 <th>Phone Number</th>
             </tr>
-            <tr *ngFor="let contact of userContacts">
+            <tr *ngFor="let contact of database.searchUser(this.username)?.getContacts()">
                 <td>{{contact.getName()}}</td>
                 <td>{{contact.getNumber()}}</td>
             </tr>
         </table>
+        <!-- optional: implement a "logout" button.
+                Because without the logout button, it's like we are 
+                playing S.A.O. -->
     </div>
 </div>
