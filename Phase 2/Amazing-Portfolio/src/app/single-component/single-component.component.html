@@ -1,5 +1,5 @@
 <div class="container">
-    <div *ngIf="loginPage">
+    <div *ngIf="loginPage" class="component">
         <h1>Login Form</h1>
         <div class="form-group">
             <form [formGroup]="loginForm" (ngSubmit)="login()">
@@ -9,18 +9,22 @@
                 <label for="password">Password</label>
                 <input type="password" id="password" formControlName="password" class="form-control">
                 <br>
-                <div class="alert alert-danger" role="alert" *ngIf="usernamePasswordError"> 
+                <br>
+                <div class="alert" *ngIf="usernamePasswordError"> 
                     username and/or password is incorrect
                 </div>
+                <br>
                 <input type="submit" value="Login" [disabled]="!loginForm.valid">
                 <input type="button" value="Sign Up" (click)="signUp()">
             </form>
+            <br>
         </div>
     </div>
     
-    <div *ngIf="registrationPage">
+    <div *ngIf="registrationPage" class="component">
         <h1>Registration Form</h1>
         <input type="button" value="To Login Page" (click)="toLoginPage()">
+        <br><br>
         <div class="form-group">
             <form [formGroup]="registrationForm" (ngSubmit)="register()">
                 <label for="firstname">First name</label>
@@ -35,19 +39,22 @@
                 <label for="password">Password</label>
                 <input type="password" id="password" formControlName="password" class="form-control">
                 <br>
-                <div class="alert alert-danger" role="alert" *ngIf="usernameExistedError"> 
+                <br>
+                <div class="alert" *ngIf="usernameExistedError"> 
                     The username has been taken!
                 </div>
-                <div class="alert alert-success" role="alert" *ngIf="registrationSuccess"> 
+                <div class="success" *ngIf="registrationSuccess"> 
                     Registration Completed! You can login now
                 </div>
+                <br>
                 <input type="submit" value="Register" [disabled]="!registrationForm.valid">
                 <input type="reset" value="Reset">
             </form>
+            <br>
         </div>
     </div>
     
-    <div *ngIf="portfolioPage">
+    <div *ngIf="portfolioPage" class="component">
         <h1>My Portfolio</h1>
         <h3>Welcome {{username}}</h3>
         <div class="form-group">
@@ -57,11 +64,13 @@
                 <br>
                 <label for="phoneNumber">Phone Number</label>
                 <input type="text" id="phoneNumber" formControlName="phoneNumber" class="form-control">
-                <br>
+                <br><br>
                 <input type="submit" value="Save" [disabled]="!contactForm.valid">
             </form>
         </div>
+        <br>
         <input type="button" value="Contact Details" (click)="showTable()">
+        <br><br>
         <table *ngIf="contactsTable">
             <tr>
                 <th>Name</th>
@@ -72,6 +81,7 @@
                 <td>{{contact.getNumber()}}</td>
             </tr>
         </table>
+        <br>
         <!-- optional: implement a "logout" button.
                 Because without the logout button, it's like we are 
                 playing S.A.O. -->
