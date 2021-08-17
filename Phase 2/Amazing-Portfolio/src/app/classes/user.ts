@@ -3,7 +3,11 @@ import { Contact } from "./contact";
 export class User {
     private contacts: Contact[] = [];
 
-    constructor(private username: string, private password: string){}
+    constructor(
+      private username: string, 
+      private password: string,
+      private firstname: string,
+      private lastname: string){}
   
     addContact(name: string, number: string) {
       this.contacts.unshift(

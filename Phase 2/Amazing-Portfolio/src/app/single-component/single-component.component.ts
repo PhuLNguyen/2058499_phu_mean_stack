@@ -116,7 +116,11 @@ export class SingleComponentComponent implements OnInit {
     if (usernameExisted) {
       this.usernameExistedError = true;
     } else {
-      this.database.addUser(registrationFields.username, registrationFields.password);
+      this.database.addUser(
+        registrationFields.username, 
+        registrationFields.password,
+        registrationFields.firstname,
+        registrationFields.lastname);
       this.registrationSuccess = true;
       this.registrationForm.reset();
     }

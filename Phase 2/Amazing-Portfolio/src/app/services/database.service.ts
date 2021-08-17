@@ -9,9 +9,13 @@ export class DatabaseService {
 
   constructor() { }
 
-  addUser(username: string, password: string) {
+  addUser(
+    username: string, 
+    password: string,
+    firstname: string,
+    lastname: string) {
     this.users.push(
-      new User(username, password)
+      new User(username, password, firstname, lastname)
     );
   }
 
