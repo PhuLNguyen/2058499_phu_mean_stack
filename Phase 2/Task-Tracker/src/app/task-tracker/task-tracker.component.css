@@ -1,0 +1,38 @@
+/* 2058499 Task Tracker */
+
+h1, h2 {
+    text-align: center;
+}
+
+mat-card {
+    margin: 5px;
+    background-color: rgb(182, 255, 255);
+}
+
+mat-paginator {
+    min-width: fit-content;
+}
+
+.row {
+    display: flex;
+}
+
+.mat-column-task {
+    width: 50%;
+}
+
+#task-card {
+    flex: 10%;
+    height: 100vh;
+}
+
+#list-card {
+    flex: 90%;
+    height: 100vh;
+    max-height: 100vh;
+    overflow: scroll;
+}
+
+table {
+    width: 100%;
+}
