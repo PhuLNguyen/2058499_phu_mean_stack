@@ -1,9 +1,12 @@
-<div *ngIf="userAnswerReady && correctAnswerReady">
+<div *ngIf="finishGrading">
     <h1>Result</h1>
-    <div *ngFor="let a of answer">
-        <!-- let q of question; 
-        Question: {{q.question}}?<br>
-        Your Answer: {{q.userAnswer}}<br> -->
-        Correct Answer: {{a.ans}}<br><br>
+    <p>{{score}}%</p>
+    <div *ngIf="score >= 70">Congratulation! You Pass! <br><br></div>
+    <div *ngIf="score < 70">Sorry! You Fail! <br><br></div>
+    <div *ngFor="let q of question; let index = index">
+        Question: {{q.question}}? <br>
+        Your Answer: {{q.userAnswer}} <br> 
+        Correct Answer: {{answer[index].ans}} <br>
+        {{q.result}} <br><br>
     </div>
 </div>

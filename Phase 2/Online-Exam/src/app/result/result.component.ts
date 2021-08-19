@@ -11,8 +11,8 @@ import { AnswerService } from '../services/answer.service';
 })
 export class ResultComponent implements OnInit {
 
-  userAnswerReady: boolean = false;
-  correctAnswerReady: boolean = false;
+  score: number = 0;
+  finishGrading: boolean = false;
   question: Question[] = [];
   answer: Answer[] = [];
 
@@ -20,22 +20,42 @@ export class ResultComponent implements OnInit {
     public answerService: AnswerService,
     public activatedRoute: ActivatedRoute  
   ) { 
-    this.answerService.loadAnswerJsonData().subscribe(
-      data => this.answer = data,
-      error => console.log(error),
-      () => {
-        console.log("from Result component", this.answer);
-        this.correctAnswerReady = true;
-      }
-    );
+    // listen to the user answer
     this.activatedRoute.params.subscribe(data => {
+      // received user answer
       this.question = JSON.parse(data.questionJsonStr);
       console.log("from Result component", this.question);
-      this.userAnswerReady = true;
+
+      // listen to the correct answer
+      this.answerService.loadAnswerJsonData().subscribe(
+        // store the correct answer
+        data => this.answer = data,
+        error => console.log(error),
+        () => {
+          console.log("from Result component", this.answer);
+          // start grading process
+          this.gradeQuiz();
+        }
+      );
     });
   }
 
   ngOnInit(): void {
+  }
+
+  gradeQuiz() {
+    for(let i = 0; i < this.question.length; i++) {
+      if (this.question[i].userAnswer === this.answer[i].ans) {
+        this.question[i].result = true;
+        this.score++;
+      } else {
+        this.question[i].result = false;
+      }
+    }
+
+    this.score = Math.round(this.score / this.question.length * 100);
+
+    this.finishGrading = true;
   }
 
 }
