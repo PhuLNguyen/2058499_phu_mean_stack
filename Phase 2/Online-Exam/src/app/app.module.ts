@@ -11,6 +11,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { MatCardModule } from'@angular/material/card';
+import { MatButtonModule } from'@angular/material/button';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { FormsModule } from '@angular/forms';
       registrationStrategy: 'registerWhenStable:30000'
     }),
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    MatCardModule,
+    MatButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

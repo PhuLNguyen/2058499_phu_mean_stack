@@ -10,7 +10,8 @@ import { DatabaseService } from '../services/database.service';
 	styleUrls: ['./quiz.component.css']
 })
 export class QuizComponent implements OnInit {
-
+	// this flag is to prevent error popup in console while waiting for questions from the server
+	questionReady: boolean = false; 
 	totalQuestion: number = 0;
 	questionNumber: number = 0;
 	question: Question[] = [];
@@ -24,8 +25,9 @@ export class QuizComponent implements OnInit {
 			data => this.question = data,
 			error => console.log(error),
 			() => {
-				console.log(this.question);
+				console.log("from Quiz component", this.question);
 				this.totalQuestion = this.question.length;
+				this.questionReady = true;
 			}
 		);
 	}

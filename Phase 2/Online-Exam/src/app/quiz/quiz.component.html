@@ -1,15 +1,19 @@
-<div>
-    <h1>The Trivial Quiz</h1>
-    <p>Question {{questionNumber + 1}}/{{totalQuestion}}: {{question[questionNumber].question}}?</p>
-    <form #questionRef="ngForm" (ngSubmit)="displayQuestion(questionRef)">
-        <input type="radio" name="answer" value={{question[questionNumber].opt1}} ngModel> 
-            A. {{question[questionNumber].opt1}} <br>
-        <input type="radio" name="answer" value={{question[questionNumber].opt2}} ngModel> 
-            B. {{question[questionNumber].opt2}} <br>
-        <input type="radio" name="answer" value={{question[questionNumber].opt3}} ngModel> 
-            C. {{question[questionNumber].opt3}} <br>
-        <input type="radio" name="answer" value={{question[questionNumber].opt4}} ngModel> 
-            D. {{question[questionNumber].opt4}} <br>
-        <input type="submit" value="Next">
-    </form>
+<div *ngIf="questionReady">
+    <mat-card>
+        <h1><b>The Trivial Quiz</b></h1>
+    </mat-card>
+    <mat-card id="question-card">
+        <p><b> Question {{questionNumber + 1}}/{{totalQuestion}}: {{question[questionNumber].question}}? </b></p><br>
+        <form #questionRef="ngForm" (ngSubmit)="displayQuestion(questionRef)">
+            <p> <input type="radio" name="answer" value={{question[questionNumber].opt1}} ngModel> 
+                A. {{question[questionNumber].opt1}} </p>
+            <p> <input type="radio" name="answer" value={{question[questionNumber].opt2}} ngModel> 
+                B. {{question[questionNumber].opt2}} </p>
+            <p> <input type="radio" name="answer" value={{question[questionNumber].opt3}} ngModel> 
+                C. {{question[questionNumber].opt3}} </p>
+            <p> <input type="radio" name="answer" value={{question[questionNumber].opt4}} ngModel> 
+                D. {{question[questionNumber].opt4}} </p><br>
+            <button mat-raised-button color="accent" type="submit">Next</button>
+        </form>
+    </mat-card>
 </div>

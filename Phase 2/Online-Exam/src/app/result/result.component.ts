@@ -11,6 +11,8 @@ import { AnswerService } from '../services/answer.service';
 })
 export class ResultComponent implements OnInit {
 
+  scoreCardBgColor: string = "";
+  msg: string = "";
   score: number = 0;
   finishGrading: boolean = false;
   question: Question[] = [];
@@ -46,14 +48,22 @@ export class ResultComponent implements OnInit {
   gradeQuiz() {
     for(let i = 0; i < this.question.length; i++) {
       if (this.question[i].userAnswer === this.answer[i].ans) {
-        this.question[i].result = true;
+        this.question[i].result = "green";
         this.score++;
       } else {
-        this.question[i].result = false;
+        this.question[i].result = "red";
       }
     }
 
     this.score = Math.round(this.score / this.question.length * 100);
+
+    if (this.score >= 70) {
+      this.msg = "Congratulation! You Pass!";
+      this.scoreCardBgColor = "green";
+    } else {
+      this.msg = "Sorry! You Fail!";
+      this.scoreCardBgColor = "red";
+    }
 
     this.finishGrading = true;
   }

@@ -1,12 +1,18 @@
 <div *ngIf="finishGrading">
-    <h1>Result</h1>
-    <p>{{score}}%</p>
-    <div *ngIf="score >= 70">Congratulation! You Pass! <br><br></div>
-    <div *ngIf="score < 70">Sorry! You Fail! <br><br></div>
-    <div *ngFor="let q of question; let index = index">
-        Question: {{q.question}}? <br>
-        Your Answer: {{q.userAnswer}} <br> 
-        Correct Answer: {{answer[index].ans}} <br>
-        {{q.result}} <br><br>
-    </div>
+    <mat-card>
+        <h1><b>Result</b></h1>
+    </mat-card>
+
+    <mat-card id="score-card" style="background-color: {{scoreCardBgColor}}">
+        <p class="text-center" id="score"><b> {{score}}% </b></p><br>
+        <p class="text-center"> {{msg}} </p>
+    </mat-card>
+
+    <mat-card id="question-card">
+        <div *ngFor="let q of question; let index = index">
+            <p class="white-text"><b> Question: {{q.question}}? </b></p>
+            <label class="white-text" style="background-color: {{q.result}}"> Your Answer: {{q.userAnswer}} </label><br>
+            <label> Correct Answer: {{answer[index].ans}} </label><br><br>
+        </div>
+    </mat-card>
 </div>

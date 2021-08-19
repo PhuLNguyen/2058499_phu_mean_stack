@@ -1,0 +1,16 @@
+h1 {
+    color: rgba(21,103,194,255);
+    text-align: center;
+}
+
+p {
+    color: white;
+}
+
+mat-card {
+    margin: 10px;
+}
+
+#question-card {
+    background-color: rgba(21,103,194,255);
+}

@@ -1,8 +1,12 @@
 <div>
-    <h1>Review</h1>
-    <div *ngFor="let q of question">
-        Question: {{q.question}}?
-        Your Answer: {{q.userAnswer}}<br><br>
-    </div>
-    <input type="button" value="Submit" (click)="checkResult()">
+    <mat-card>
+        <h1><b>Review</b></h1>
+    </mat-card>
+    <mat-card id="question-card">
+        <div *ngFor="let q of question">
+            <p><b> Question: {{q.question}}? </b><br>
+            Your Answer: {{q.userAnswer}} </p>
+        </div><br>
+        <button mat-raised-button color="accent" type="button" (click)="checkResult()">Submit</button>
+    </mat-card>
 </div>
