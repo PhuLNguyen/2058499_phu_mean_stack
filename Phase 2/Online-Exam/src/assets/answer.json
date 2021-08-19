@@ -1,32 +1,42 @@
 [
     {
-        "1 + 1?" : "2"
+        "question" : "Who sang the opening of the anime Kimetsu no Yaiba (Demon Slayer)",
+        "ans" : "LiSA"
     },
     {
-        "What is the water boiling temperature?" : "100°C"
+        "question" : "What is the water boiling temperature",
+        "ans" : "100°C"
     },
     {
-        "Symbol for Hydrogen element?" : "H"
+        "question" : "Symbol for Hydrogen element",
+        "ans" : "H"
     },
     {
-        "Who invented Calculus?" : "Newton"
+        "question" : "Who invented Calculus",
+        "ans" : "Newton"
     },
     {
-        "How many hours in a day?" : "24"
+        "question" : "How many hours in a day",
+        "ans" : "24"
     },
     {
-        "What a group of crows called?" : "murder"
+        "question" : "What a group of crows called",
+        "ans" : "a murder"
     },
     {
-        "How many dots appear on a pair of dice?" : "42"
+        "question" : "How many dots appear on a pair of dice",
+        "ans" : "42"
     },
     {
-        "How many hearts does an octopus have?" : "3"
+        "question" : "How many hearts does an octopus have",
+        "ans" : "3"
     },
     {
-        "What planet is closest to the sun?" : "Mercury"
+        "question" : "What planet is closest to the sun",
+        "ans" : "Mercury"
     },
     {
-        "Where is the strongest human muscle located?" : "Jaw"
+        "question" : "Where is the strongest human muscle located",
+        "ans" : "Jaw"
     }
 ]

@@ -1,1 +1,8 @@
-<p>result works!</p>
+<div *ngIf="userAnswerReady && correctAnswerReady">
+    <h1>Result</h1>
+    <div *ngFor="let q of question; let a of answer">
+        Question: {{q.question}}?<br>
+        Your Answer: {{q.userAnswer}}<br>
+        Correct Answer: {{a.ans}}<br><br>
+    </div>
+</div>

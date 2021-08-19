@@ -1,1 +1,8 @@
-<p>review works!</p>
+<div>
+    <h1>Review</h1>
+    <div *ngFor="let q of question">
+        Question: {{q.question}}?
+        Your Answer: {{q.userAnswer}}<br><br>
+    </div>
+    <input type="button" value="Submit" (click)="checkResult()">
+</div>

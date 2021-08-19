@@ -1,1 +1,15 @@
-<p>quiz works!</p>
+<div>
+    <h1>The Trivial Quiz</h1>
+    <p>Question {{questionNumber + 1}}/{{totalQuestion}}: {{question[questionNumber].question}}?</p>
+    <form #questionRef="ngForm" (ngSubmit)="displayQuestion(questionRef)">
+        <input type="radio" name="answer" value={{question[questionNumber].opt1}} ngModel> 
+            A. {{question[questionNumber].opt1}} <br>
+        <input type="radio" name="answer" value={{question[questionNumber].opt2}} ngModel> 
+            B. {{question[questionNumber].opt2}} <br>
+        <input type="radio" name="answer" value={{question[questionNumber].opt3}} ngModel> 
+            C. {{question[questionNumber].opt3}} <br>
+        <input type="radio" name="answer" value={{question[questionNumber].opt4}} ngModel> 
+            D. {{question[questionNumber].opt4}} <br>
+        <input type="submit" value="Next">
+    </form>
+</div>

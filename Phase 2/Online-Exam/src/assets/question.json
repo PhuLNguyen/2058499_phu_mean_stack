@@ -1,69 +1,69 @@
 [
     {
-        "question1" : "1 + 1?",
-        "opt1" : "0",
-        "opt2" : "1",
-        "opt3" : "2",
-        "opt4" : "3"
+        "question" : "Who sang the opening of the anime Kimetsu no Yaiba (Demon Slayer)",
+        "opt1" : "LiSA",
+        "opt2" : "Aoi Eir",
+        "opt3" : "Huruna Luna",
+        "opt4" : "ClariS"
     },
     {
-        "question2" : "What is the water boiling temperature?",
+        "question" : "What is the water boiling temperature",
         "opt1" : "100°C",
         "opt2" : "200°C",
         "opt3" : "300°C",
         "opt4" : "400°C"
     },
     {
-        "question3" : "Symbol for Hydrogen element?",
+        "question" : "Symbol for Hydrogen element",
         "opt1" : "He",
         "opt2" : "K",
         "opt3" : "O",
         "opt4" : "H"
     },
     {
-        "question4" : "Who invented Calculus?",
+        "question" : "Who invented Calculus",
         "opt1" : "Spiderman",
         "opt2" : "Your calculus teacher",
         "opt3" : "Newton",
         "opt4" : "Obama"
     },
     {
-        "question5" : "How many hours in a day?",
+        "question" : "How many hours in a day",
         "opt1" : "0",
         "opt2" : "12",
         "opt3" : "24",
         "opt4" : "48"
     },
     {
-        "question6" : "What a group of crows called?",
-        "opt1" : "yolo",
-        "opt2" : "gangster",
-        "opt3" : "school",
-        "opt4" : "murder"
+        "question" : "What a group of crows called",
+        "opt1" : "a yolo",
+        "opt2" : "a gangster",
+        "opt3" : "a school",
+        "opt4" : "a murder"
     },
     {
-        "question7" : "How many dots appear on a pair of dice?",
+        "question" : "How many dots appear on a pair of dice",
         "opt1" : "0",
         "opt2" : "6",
         "opt3" : "21",
         "opt4" : "42"
     },
     {
-        "question8" : "How many hearts does an octopus have?",
+        "question" : "How many hearts does an octopus have",
         "opt1" : "0",
         "opt2" : "1",
         "opt3" : "2",
         "opt4" : "3"
     },
     {
-        "question9" : "What planet is closest to the sun?",
+        "question" : "What planet is closest to the sun",
         "opt1" : "Mercury",
         "opt2" : "Earth",
         "opt3" : "Moon",
         "opt4" : "Pluto"
     },
     {
-        "question10" : "Where is the strongest human muscle located?",
+        "question" : "Where is the strongest human muscle located",
         "opt1" : "Tongue",
         "opt2" : "Eye",
         "opt3" : "Heart",
