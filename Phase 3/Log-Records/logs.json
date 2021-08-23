@@ -1,0 +1,30 @@
+[
+    {
+        "firstname": "John",
+        "lastname": "Smith",
+        "gender": "male",
+        "email": "info@yahoo.com",
+        "datetime": "Mon Aug 23 2021 13:50:09 GMT-0500 (Central Daylight Time)"
+    },
+    {
+        "firstname": "Raj",
+        "lastname": "Ramesh",
+        "gender": "male",
+        "email": "abc@xyz.com",
+        "datetime": "Mon Aug 23 2021 14:29:59 GMT-0500 (Central Daylight Time)"
+    },
+    {
+        "firstname": "Reeta",
+        "lastname": "Veeta",
+        "gender": "female",
+        "email": "123@456.com",
+        "datetime": "Mon Aug 23 2021 14:31:55 GMT-0500 (Central Daylight Time)"
+    },
+    {
+        "firstname": "test",
+        "lastname": "debug",
+        "gender": "NA",
+        "email": "NA",
+        "datetime": "Mon Aug 23 2021 15:10:07 GMT-0500 (Central Daylight Time)"
+    }
+]
