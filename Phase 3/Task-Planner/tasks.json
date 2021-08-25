@@ -1,1 +1,14 @@
-[]
+[
+    {
+        "empId": "123456789",
+        "taskId": "111",
+        "task": "Read",
+        "deadline": "2021-08-25"
+    },
+    {
+        "empId": "987654321",
+        "taskId": "333",
+        "task": "Sleep",
+        "deadline": "2021-08-27"
+    }
+]
