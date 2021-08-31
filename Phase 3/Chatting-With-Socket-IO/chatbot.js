@@ -1,6 +1,29 @@
+// 2058499 Chatbot
+
 let PORT = 9090;
 let IP = "localhost";
 let rootDir = "/";
+
+let replies = [
+    "Hello",
+    "Bye",
+    "How are you?",
+    "Monkey",
+    "Banana",
+    "#Yolo",
+    "#Swag",
+    "Go away human!",
+    "What dou you mean?",
+    "3.14159265359",
+    "🐌🐌🐌",
+    "☠️☠️☠️",
+    "✨✨✨",
+    "😂😂😂"
+];
+
+function getRandomReply() {
+    return replies[Math.floor(Math.random() * replies.length)];
+}
 
 // load the express module
 let express = require("express");
@@ -21,10 +44,8 @@ io.on("connection", (socket) => {
     console.log("Client connected");
     // receive the message from client application
     socket.on("clientQuery", (msg) => {
-        console.log(msg);
-
         // send reply back to client
-        socket.emit("serverResponse", "Server received the message!");
+        socket.emit("serverResponse", getRandomReply());
     });
 });
 

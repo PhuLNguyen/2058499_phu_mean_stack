@@ -1,20 +1,48 @@
 /* 2058499 Chatbot */
 
-#chatHistory {
-    border: 1px solid black;
-    min-width: 100px;
-    min-height: 100px;
-    margin-bottom: 5px;
+body {
+    background-image: url(background.jpg);
 }
 
-#chatInput {
+h1 {
+    text-align: center;
+    background: linear-gradient(-85deg, #101dce 5%, #FF8C00 100%);
+    color: white;
+    margin-bottom: 0;
+    padding: 10px;
+}
+
+#chatHistory {
+    border: 1px solid black;
+    min-height: 80vh;
+    height: 80vh;
     margin-bottom: 5px;
+    overflow: auto;
 }
 
 #userMsg {
     text-align: left;
+    border-radius: 5px;
+    background-color: #fca842;
+    margin: 5px;
+    padding: 5px;
+    box-shadow: 5px 5px 2px 0px #A3A3A3;
 }
 
 #serverMsg {
     text-align: right;
+    border-radius: 5px;
+    background-color:#5760e4;
+    margin: 5px;
+    padding: 5px;
+    box-shadow: -5px 5px 2px 0px #A3A3A3;
 }
+
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+

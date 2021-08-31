@@ -9,20 +9,40 @@ chatInput.addEventListener("keydown", (event) => {
         let date = new Date();
 
         // display the user message immediately to the chat history
-        chatHistory.innerHTML += 
-            `<p id="userMsg">${date.toLocaleString()}<br> 
-            <b>Me</b>: ${chatInput.value}</p>`;
+        chatHistory.innerHTML +=
+            `
+            <div class="row">
+                <div class="col">
+                    <p id="userMsg" class="float-left">
+                        <b>Me: </b>${chatInput.value}<br> 
+                        ${date.toLocaleTimeString()}
+                    </p>
+                </div>
+            </div>
+            `;
         // send data to backend using key-value pair
-        socket.emit("clientQuery", chatInput.value); 
+        socket.emit("clientQuery", chatInput.value);
         // clear the field
-        chatInput.value = ""; 
+        chatInput.value = "";
+        // auto scroll to the bottom
+        chatHistory.scrollTop = chatHistory.scrollHeight;
     }
 });
 
 socket.on("serverResponse", (msg) => {
     let date = new Date();
 
-    chatHistory.innerHTML += 
-        `<p id="serverMsg">${date.toLocaleString()}<br> 
-        <b>Alice</b>: ${msg}</p>`;
+    chatHistory.innerHTML +=
+        `
+        <div class="row">
+                <div class="col">
+                    <p id="serverMsg" class="float-right">
+                        <b>Bot: </b>${msg}<br> 
+                        ${date.toLocaleTimeString()}
+                    </p>
+                </div>
+        </div>
+        `;
+    // auto scroll to the bottom
+    chatHistory.scrollTop = chatHistory.scrollHeight;
 });
