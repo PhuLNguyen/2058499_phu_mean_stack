@@ -1,0 +1,20 @@
+/* 2058499 Chatbot */
+
+#chatHistory {
+    border: 1px solid black;
+    min-width: 100px;
+    min-height: 100px;
+    margin-bottom: 5px;
+}
+
+#chatInput {
+    margin-bottom: 5px;
+}
+
+#userMsg {
+    text-align: left;
+}
+
+#serverMsg {
+    text-align: right;
+}
