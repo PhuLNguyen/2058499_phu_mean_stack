@@ -5,7 +5,7 @@ let courseModel = require("../model/course.model");
 let createCourse = (request, response) => {
     let course = request.body;
 
-    courseModel.insert(course, (err, result) => {
+    courseModel.insertMany(course, (err, result) => {
         if (!err) {
             response.json(result);
         } else {
