@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2058499 Course Platform</title>
+</head>
+<body>
+    <h1>Course Platform</h1>
+    <a href="createCourse.html">Create</a> |
+    <a href="retrieveCourse.html">Retrieve</a> |
+    <a href="updateCourse.html">Update</a> |
+    <a href="deleteCourse.html">Delete</a>
+    <div>
+        <h3>Delete Course</h3>
+        <form>
+            <label>Course ID: </label>
+            <input type="text" id="_id"><br>
+            <input type="submit" value="Delete" onclick="deleteCourse()">
+        </form>
+    </div>
+
+    <script>
+        async function deleteCourse() {
+            let url = `http://localhost:9090/api/course/delete/${document.getElementById("_id").value}`;
+            const response = await fetch(url, {
+                method : 'DELETE',
+                headers : {'Content-Type' : 'application/json'}
+            })
+
+            const res = await response.json();
+            console.log(res);
+        }
+    </script>
+</body>
+</html>

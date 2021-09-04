@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2058499 Course Platform</title>
+</head>
+<body>
+    <h1>Course Platform</h1>
+    <a href="createCourse.html">Create</a> |
+    <a href="retrieveCourse.html">Retrieve</a> |
+    <a href="updateCourse.html">Update</a> |
+    <a href="deleteCourse.html">Delete</a>
+    <div>
+        <h3>Retrieve Course</h3>
+        <input type="button" value="Show All Course(s)" onclick="retrieveCourse()">
+    </div>
+    <table id="coursesTable" border="1">
+
+    </table>
+
+    <script>
+        async function retrieveCourse() {
+            let coursesTable = document.getElementById("coursesTable");
+            let tableHTML;
+
+            // call the API
+            const response = await fetch('http://localhost:9090/api/course/retrieve', {
+                method : 'GET',
+                headers : {'Content-Type' : 'application/json'}
+            });
+
+            // wait for the response
+            let res = await response.json();
+            console.log(res);
+
+            // create table heading
+            tableHTML = `
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Amount</th>
+                </tr>
+            `;
+
+            // populate the table data
+            res.forEach(course => {
+                tableHTML += `
+                    <tr>
+                        <td>${course._id}</td>
+                        <td>${course.name}</td>
+                        <td>${course.description}</td>
+                        <td>${course.amount}</td>
+                    </tr>
+                `;
+            });
+
+            // show the table
+            coursesTable.innerHTML = tableHTML;
+        }
+    </script>
+</body>
+</html>

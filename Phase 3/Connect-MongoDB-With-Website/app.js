@@ -1,5 +1,3 @@
-let PORT = 9090;
-
 // url database
 let url = "mongodb://localhost:27017/Simplilearn";
 
@@ -14,6 +12,8 @@ let app = express();
 
 // add middleware
 app.use(bodyParser.json()); // to read request body as JSON
+app.use(express.static("public"));  // send static files in "public" directory to client
+                                    // when type in http://localhost:9090 in the browser
 
 // connect the database
 mongoose.connect(url)
@@ -28,4 +28,4 @@ app.use("/api/course", routerCourse);
 // http://localhost:9090/api/course/delete/1        // '1' is the course ID
 
 // run the server
-app.listen(PORT, () => console.log("Server is running on http://localhost:" + PORT));
+app.listen(9090, () => console.log("On Google Chrome, use http://localhost:9090"));
