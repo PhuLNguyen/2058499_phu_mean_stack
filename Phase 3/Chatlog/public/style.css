@@ -16,8 +16,11 @@ h1 {
     border: 1px solid black;
     min-height: 80vh;
     height: 80vh;
-    margin-bottom: 5px;
     overflow: auto;
+}
+
+#username {
+    margin: 10px 0px 10px 0px;
 }
 
 #userMsg {
