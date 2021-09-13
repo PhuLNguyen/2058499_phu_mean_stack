@@ -1,0 +1,26 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Setup') {
+            steps {
+                echo 'all setup is ready'
+            }
+        }
+        stage('Checking the version') {
+            steps {
+                echo 'Version verified'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Build the project'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'project testing successfully'
+            }
+        }
+    }
+}
